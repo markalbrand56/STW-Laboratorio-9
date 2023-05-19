@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import styles from "./Calculator.module.css"
+import Display from "../Display/Display.jsx"
 
 function Calculator() {
     const [input, setInput] = useState("0")
@@ -129,6 +130,7 @@ function Calculator() {
     return (
         <div className={styles.Calculator}>
             <p>Calculadora</p>
+            <Display input={input} />
         </div>
     )
 }
