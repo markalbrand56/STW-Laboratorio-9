@@ -20,6 +20,8 @@ function Body({ buttons, handleClick }) {
                             buttonClass += ` ${styles.Zero}`
                         }
 
+                        buttonClass += "button-for-test"
+
                         return (
                             <button
                                 key={button}
