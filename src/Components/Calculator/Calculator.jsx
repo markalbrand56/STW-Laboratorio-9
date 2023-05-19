@@ -131,7 +131,9 @@ function Calculator() {
                         break
                     case "÷":
                         setInput((prev) =>
-                            (cache / parseFloat(prev)).toString()
+                            (cache / parseFloat(prev))
+                                .toString()
+                                .substring(0, 10)
                         )
                         break
                     default:
