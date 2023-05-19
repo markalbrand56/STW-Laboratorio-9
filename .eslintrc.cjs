@@ -25,6 +25,7 @@ module.exports = {
       "tabWidth": 4,
       'endOfLine': 'auto'
     }],
-    "jsx-a11y/no-noninteractive-tabindex": "off"
+    "jsx-a11y/no-noninteractive-tabindex": "off",
+    "import/no-extraneous-dependencies": "off",
   }
 };
