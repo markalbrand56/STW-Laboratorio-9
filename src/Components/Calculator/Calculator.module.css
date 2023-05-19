@@ -6,7 +6,8 @@
 
     width: min(70%, 300px);
 
-    border: 1em solid #585858;
+    padding: 1em;
+    background-color: #585858;
 }
 
 .error {
