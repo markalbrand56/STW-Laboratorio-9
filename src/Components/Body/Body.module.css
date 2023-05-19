@@ -30,12 +30,13 @@
     transition: background-color 0.2s ease-in-out;
 }
 
-.LastFromRow {
-    background-color: #ff974f;
-}
-
 .FirstRow {
     background-color: #878787;
+}
+
+.LastFromRow {
+    background-color: #ff974f;
+    border: 1px solid #d8742e;
 }
 
 .Zero {

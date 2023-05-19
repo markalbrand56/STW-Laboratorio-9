@@ -12,7 +12,7 @@ function Body({ buttons, handleClick }) {
                         if (index === 0) {
                             buttonClass += ` ${styles.FirstRow}`
                         }
-                        if (j === 3) {
+                        if (j === 3 || button === "=") {
                             buttonClass += ` ${styles.LastFromRow}`
                         }
 

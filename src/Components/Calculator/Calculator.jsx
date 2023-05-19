@@ -17,8 +17,6 @@ function Calculator() {
     ]
 
     const handleClick = (value) => {
-        console.log("cache", cache, "value", value)
-
         if (input === "Error" && value !== "C") return
 
         switch (value) {
