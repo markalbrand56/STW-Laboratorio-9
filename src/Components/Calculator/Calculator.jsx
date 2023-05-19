@@ -152,7 +152,9 @@ function Calculator() {
                         )
                         break
                     case "MOD":
-                        setInput((prev) => (cache % parseFloat(prev)).toString())
+                        setInput((prev) =>
+                            (cache % parseFloat(prev)).toString()
+                        )
                         break
                     default:
                         break
