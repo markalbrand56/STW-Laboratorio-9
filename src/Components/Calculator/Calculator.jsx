@@ -141,15 +141,15 @@ function Calculator() {
                 setCache(input)
                 break
             default:
-                if (input.length > 10) {
-                    setInput("Error")
+                if (input.length >= 9) {
+                    // setInput("Error")
                     return
                 }
                 setInput(input === "0" ? value : input + value)
         }
     }
 
-    if (input.toString().length > 10) {
+    if (input.toString().length > 9) {
         setInput("Error")
     }
 
