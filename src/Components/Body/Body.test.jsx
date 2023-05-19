@@ -6,6 +6,8 @@ import Body from "./Body"
 describe("Body", () => {
     it("renders Body component", () => {
         render(<Body buttons={[]} handleClick={() => {}} />)
+        const element = screen.getByLabelText("Body")
+        expect(element).toBeInTheDocument()
     })
     it("renders Body component with buttons", () => {
         render(<Body buttons={[["1", "2", "3"]]} handleClick={() => {}} />)

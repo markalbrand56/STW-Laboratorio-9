@@ -5,7 +5,7 @@ import styles from "./Display.module.css"
 function Display({ input }) {
     return (
         <div className={styles.Display}>
-            <p>{input}</p>
+            <p>{input.substring(0, 9)}</p>
         </div>
     )
 }
