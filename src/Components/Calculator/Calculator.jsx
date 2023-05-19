@@ -21,13 +21,6 @@ function Calculator() {
 
         if (input === "Error" && value !== "C") return
 
-        if (cache != null) {
-            if (cache.length > 9) {
-                setInput("Error")
-                return
-            }
-        }
-
         switch (value) {
             case "C":
                 setInput("0")
@@ -154,6 +147,10 @@ function Calculator() {
                 }
                 setInput(input === "0" ? value : input + value)
         }
+    }
+
+    if (input.toString().length > 10) {
+        setInput("Error")
     }
 
     return (
