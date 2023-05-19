@@ -17,8 +17,6 @@ function Calculator() {
     ]
 
     const handleClick = (value) => {
-        console.log("value", value)
-        console.log("cache", cache)
         switch (value) {
             case "C":
                 setInput("0")
@@ -129,7 +127,7 @@ function Calculator() {
                         break
                     case "÷":
                         setInput((prev) =>
-                            (cache / parseFloat(prev)).toString()
+                            (cache / parseFloat(prev)).toString().slice(0, 10)
                         )
                         break
                     default:
