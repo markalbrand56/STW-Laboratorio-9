@@ -5,4 +5,18 @@
     justify-content: center;
 
     width: min(70%, 300px);
+
+    border: 1em solid #585858;
+}
+
+.error {
+    animation: tilt-shaking 0.5s ease-in-out;
+}
+
+@keyframes tilt-shaking {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(-5deg); }
+    100% { transform: rotate(0deg); }
 }

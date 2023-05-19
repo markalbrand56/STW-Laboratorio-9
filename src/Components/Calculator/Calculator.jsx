@@ -153,8 +153,16 @@ function Calculator() {
         setInput("Error")
     }
 
+    let classname
+
+    if (input === "Error") {
+        classname = `${styles.Calculator} ${styles.error}`
+    } else {
+        classname = `${styles.Calculator}`
+    }
+
     return (
-        <div className={styles.Calculator}>
+        <div className={classname}>
             <Display input={input} />
             <Body buttons={botones} handleClick={handleClick} />
         </div>
