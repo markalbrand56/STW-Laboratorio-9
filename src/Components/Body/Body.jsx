@@ -16,8 +16,8 @@ function Body({ buttons, handleClick }) {
                             buttonClass += ` ${styles.LastFromRow}`
                         }
 
-                        if (button === "0") {
-                            buttonClass += ` ${styles.Zero}`
+                        if (button === "MOD") {
+                            buttonClass += ` ${styles.Mod}`
                         }
 
                         return (

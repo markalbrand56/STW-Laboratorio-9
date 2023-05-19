@@ -9,11 +9,11 @@ function Calculator() {
     const [operator, setOperator] = useState(null)
 
     const botones = [
-        ["C", "±", "%", "÷"],
+        ["C", "MOD", "%", "÷"],
         ["7", "8", "9", "x"],
         ["4", "5", "6", "-"],
         ["1", "2", "3", "+"],
-        ["0", ".", "="],
+        ["±", "0", ".", "="],
     ]
 
     const handleClick = (value) => {
@@ -24,6 +24,23 @@ function Calculator() {
                 setInput("0")
                 setCache(null)
                 setOperator(null)
+                break
+            case "MOD":
+                if (operator !== null) {
+                    if (operator === "+") {
+                        setCache((prev) => prev + parseFloat(input))
+                    } else if (operator === "-") {
+                        setCache((prev) => prev - parseFloat(input))
+                    } else if (operator === "x") {
+                        setCache((prev) => prev * parseFloat(input))
+                    } else if (operator === "÷") {
+                        setCache((prev) => prev / parseFloat(input))
+                    }
+                } else {
+                    setCache(parseFloat(input))
+                }
+                setOperator("MOD")
+                setInput("0")
                 break
             case "±":
                 setInput((prev) => (parseFloat(prev) * -1).toString())
@@ -131,8 +148,11 @@ function Calculator() {
                         setInput((prev) =>
                             (cache / parseFloat(prev))
                                 .toString()
-                                .substring(0, 10)
+                                .substring(0, 9)
                         )
+                        break
+                    case "MOD":
+                        setInput((prev) => (cache % parseFloat(prev)).toString())
                         break
                     default:
                         break
