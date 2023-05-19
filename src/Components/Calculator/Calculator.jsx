@@ -17,6 +17,17 @@ function Calculator() {
     ]
 
     const handleClick = (value) => {
+        console.log("cache", cache, "value", value)
+
+        if (input === "Error" && value !== "C") return
+
+        if (cache != null) {
+            if (cache.length > 9) {
+                setInput("Error")
+                return
+            }
+        }
+
         switch (value) {
             case "C":
                 setInput("0")
@@ -127,16 +138,20 @@ function Calculator() {
                         break
                     case "÷":
                         setInput((prev) =>
-                            (cache / parseFloat(prev)).toString().slice(0, 10)
+                            (cache / parseFloat(prev)).toString()
                         )
                         break
                     default:
                         break
                 }
-                setCache(null)
+                setOperator(null)
+                setCache(input)
                 break
             default:
-                if (input.length > 10) return
+                if (input.length > 10) {
+                    setInput("Error")
+                    return
+                }
                 setInput(input === "0" ? value : input + value)
         }
     }
