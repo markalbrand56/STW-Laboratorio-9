@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import styles from "./Calculator.module.css"
-import Display from "../Display/Display.jsx"
+import Display from "../Display/Display"
+import Body from "../Body/Body"
 
 function Calculator() {
     const [input, setInput] = useState("0")
@@ -16,6 +17,8 @@ function Calculator() {
     ]
 
     const handleClick = (value) => {
+        console.log("value", value)
+        console.log("cache", cache)
         switch (value) {
             case "C":
                 setInput("0")
@@ -110,27 +113,40 @@ function Calculator() {
 
                 switch (operator) {
                     case "+":
-                        setInput((prev) => (cache + parseFloat(prev)).toString())
+                        setInput((prev) =>
+                            (cache + parseFloat(prev)).toString()
+                        )
                         break
                     case "-":
-                        setInput((prev) => (cache - parseFloat(prev)).toString())
+                        setInput((prev) =>
+                            (cache - parseFloat(prev)).toString()
+                        )
                         break
                     case "x":
-                        setInput((prev) => (cache * parseFloat(prev)).toString())
+                        setInput((prev) =>
+                            (cache * parseFloat(prev)).toString()
+                        )
                         break
                     case "÷":
-                        setInput((prev) => (cache / parseFloat(prev)).toString())
+                        setInput((prev) =>
+                            (cache / parseFloat(prev)).toString()
+                        )
                         break
                     default:
                         break
                 }
+                setCache(null)
+                break
+            default:
+                if (input.length > 10) return
+                setInput(input === "0" ? value : input + value)
         }
     }
 
     return (
         <div className={styles.Calculator}>
-            <p>Calculadora</p>
             <Display input={input} />
+            <Body buttons={botones} handleClick={handleClick} />
         </div>
     )
 }
