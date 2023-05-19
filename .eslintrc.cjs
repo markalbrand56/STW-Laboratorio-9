@@ -3,7 +3,12 @@ module.exports = {
     browser: true,
     es2021: true
   },
-  extends: ["plugin:react/recommended", "airbnb", "plugin:storybook/recommended"],
+  extends: [
+      "plugin:react/recommended",
+      "airbnb",
+      "plugin:storybook/recommended",
+      "plugin:prettier/recommended",
+  ],
   overrides: [],
   parserOptions: {
     ecmaVersion: 'latest',
