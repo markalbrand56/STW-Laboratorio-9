@@ -7,4 +7,6 @@ export default {
     argTypes: {},
 }
 
-
+export const base = {
+    args: {},
+}
